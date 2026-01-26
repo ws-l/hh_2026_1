@@ -1,0 +1,55 @@
+#1. 기본
+conda --version        # conda 버전
+conda info             # conda 전체 설정
+conda info --envs      # 환경 목록
+conda env list         # 환경 목록 (동일)
+conda list
+conda list | findstr sklearn
+
+#2. 가상환경 생성/삭제, 활성화/비활성화
+conda create -n ds python=3.10
+conda create -n ml python=3.9 numpy pandas scikit-learn
+conda remove -n ds --all
+
+conda activate ds
+conda deactivate
+
+#3. 패키지 설치 및 제거
+conda install numpy
+conda install pandas=1.5.3
+conda remove pandas
+conda install numpy pandas matplotlib
+#conda install 후 pip설치, 반대 순서는 오류 가능
+
+#4. 채널 관리
+conda config --show channels
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install -c conda-forge pyarrow
+
+#5. 환경 export
+저장
+conda env export > environment.yml
+복원
+conda env create -f environment.yml
+conda env create -n newenv -f environment.yml
+
+#6. 예
+1) 환경 생성
+conda create -n test python=3.14
+
+2) 활성화
+conda activate test
+
+3) 채널 설정
+conda config --show channels
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
+4) 패키지 설치
+conda install numpy pandas scikit-learn seaborn
+
+5) pip 보완
+pip install mlxtend
+
+
