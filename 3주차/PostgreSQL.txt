@@ -1,0 +1,19 @@
+#PostgreSQL
+
+1. 접속 정보(default로 설치 시)
+- username: postgres
+- password: 설치 중 지정한 password, 변경 가능
+- port: 5432
+
+2. Password 변경
+- pgAdmin (GUI)을 활용
+- 경로: pgAdmin 접속 → Login/Group Roles → postgres
+→ 우클릭 → Properties → Definition → Password 변경 → Save
+
+3. Port 변경
+- pgAdmin 접속 → Servers ->PostgreSQL18 → Properties → Connection → Port 변경
+
+4. 테이블 확인
+- pgAdmin 접속 → Servers → Databases → 현재 데이터베이스 선택 → Schemas → public → Tables
+
+
